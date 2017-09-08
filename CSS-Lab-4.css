@@ -1,9 +1,19 @@
 button{
     height: 2rem;
     width: 5rem;
-    /* position: static; */
-    /* text-align: center; */
-    /* margin: 0px auto; */
-     /* align-content: center; */
-    
+    position: fixed;
+    margin-left:43% ;    
+}
+.squares {
+    width: 10rem;
+    height: 10rem;
+    font-size: 5rem;
+    color: white;
+    background-color: black;
+    text-align: center;
+    line-height: 3rem;
+    vertical-align: middle;
+    margin: 0.2rem;
+    margin-top: 2.01rem;
+    float: left;
 }
