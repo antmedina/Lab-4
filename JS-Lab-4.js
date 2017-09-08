@@ -1,68 +1,66 @@
+//color array
+var RYGB=["red","yellow","blue","green"];
 //created button
 document.addEventListener("DOMContentLoaded" , function(){
     var btn =document.createElement("button");
-    var btnText = document.createTextNode("Add Square");
-    btn.appendChild(btnText);
+    btn.innerText ="Add Square";
     document.body.appendChild(btn);
 //add event
     btn.addEventListener("click" , addSquare);
-
-//template for squares
-    // var square = document.createElement('div');
-    // square.className = 'square';
-    // document.body.appendChild(square);
-
+//create a div container
+var container = document.createElement("div");
+container.className = "container";
+document.body.appendChild(container);
 //create function for addSquare
     function addSquare(){
          var existingSquares = document.getElementsByClassName('squares').length;
         var squares = document.createElement("div");
         squares.className = "squares";
         squares.id=existingSquares;
-       
- 
+        document.body.appendChild(squares);
  //create eventListeners for squares       
         squares.addEventListener("click" , randoColor);
         squares.addEventListener("dblclick" , removeNeighbor);
-        squares.addEventListener("mouseover" , showNum);
+        squares.addEventListener("mouseenter" , showNum);
         squares.addEventListener("mouseleave" , removeNum);
-
-        document.body.appendChild(squares);
+ //put this element in your container       
+        container.appendChild(squares);
     }
-// //create function randoColor
-    function randoColor(event){
-        var RYGB=["red","yellow","blue","green"];
-        var randoColor = Math.floor(Math.random()*RYGB.length);
-        div.style.backgroundColor = randoColor;
-     };
+ //  create function randoColor
+        function randoColor(event){
+            var index = Math.floor(Math.random()*RYGB.length);
+            var newColor = RYGB[index];
+            this.style.backgroundColor = newColor;
+        }; 
 
-//create showNum/removeNum functions
+//create showNum function
     function showNum() {
         var id = this.id;
         this.innerText = id;
     }
+//create removeNum function
     function removeNum() {
         this.innerText = "";
     }
 //removing neighbor
     function removeNeighbor() {
         var id = this.id;
+//sets id to identify even numbers
         if (id % 2 === 0) {
-        // if even, remove the square after
+// if even, remove the square after
              if (this.nextSibling) {
-                 this.nextSibling.remove();
+                 this.nextSibling.remove() ; 
              } else {
                  alert('There are no elements to the right to remove.');
              }
         } else {
-        // if odd, remove the square before
+// if odd, remove the square before
              if (this.previousSibling) {
             this.previousSibling.remove();
              } else {
             alert('There are no elements to the left to remove.');
              }
-            //  if (id===0){
-                
-            //  }
+
         }
      }
 })
