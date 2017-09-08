@@ -8,9 +8,9 @@ document.addEventListener("DOMContentLoaded" , function(){
 //add event
     btn.addEventListener("click" , addSquare);
 //create a div container
-var container = document.createElement("div");
-container.className = "container";
-document.body.appendChild(container);
+    var container = document.createElement("div");
+    container.className = "container";
+    document.body.appendChild(container);
 //create function for addSquare
     function addSquare(){
          var existingSquares = document.getElementsByClassName('squares').length;
