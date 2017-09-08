@@ -8,10 +8,12 @@ button{
     width: 10rem;
     height: 10rem;
     font-size: 5rem;
-    color: white;
-    background-color: black;
     text-align: center;
-    line-height: 3rem;
+    /* position: relative; */
+    color: white;
+    background-color: #B04848;
+    text-align: center;
+    line-height: 9rem;
     vertical-align: middle;
     margin: 0.2rem;
     margin-top: 2.01rem;
