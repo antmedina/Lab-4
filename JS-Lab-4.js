@@ -32,7 +32,6 @@ document.body.appendChild(container);
             var newColor = RYGB[index];
             this.style.backgroundColor = newColor;
         }; 
-
 //create showNum function
     function showNum() {
         var id = this.id;
@@ -53,14 +52,13 @@ document.body.appendChild(container);
              } else {
                  alert('There are no elements to the right to remove.');
              }
-        } else {
 // if odd, remove the square before
+            } else {
              if (this.previousSibling) {
             this.previousSibling.remove();
              } else {
             alert('There are no elements to the left to remove.');
              }
-
         }
      }
 })
