@@ -1,14 +1,3 @@
-//create color array
-var RYGB=["red","yellow","blue","green"];
-// //create function randoColor
-// function randoColor(event){
-//     var index = Math.floor(Math.random()*RYGB.length);
-//     var newColor = colors[index];
-// // event.target.style.backgroundColor = newColor;
-
-// // We need to set newColor as the backgroundColor of the clicked div; no need if add event parameter to function + .target class       
-//    this.style.backgroundColor = newColor;
-//      }
 //created button
 document.addEventListener("DOMContentLoaded" , function(){
     var btn =document.createElement("button");
@@ -32,13 +21,21 @@ document.addEventListener("DOMContentLoaded" , function(){
        
  
  //create eventListeners for squares       
-        // squares.addEventListener("click" , randoColor);
+        squares.addEventListener("click" , randoColor);
         squares.addEventListener("dblclick" , removeNeighbor);
         squares.addEventListener("mouseover" , showNum);
         squares.addEventListener("mouseleave" , removeNum);
 
         document.body.appendChild(squares);
     }
+// //create function randoColor
+    function randoColor(event){
+        var RYGB=["red","yellow","blue","green"];
+        var randoColor = Math.floor(Math.random()*RYGB.length);
+        div.style.backgroundColor = randoColor;
+     };
+
+//create showNum/removeNum functions
     function showNum() {
         var id = this.id;
         this.innerText = id;
@@ -46,6 +43,7 @@ document.addEventListener("DOMContentLoaded" , function(){
     function removeNum() {
         this.innerText = "";
     }
+//removing neighbor
     function removeNeighbor() {
         var id = this.id;
         if (id % 2 === 0) {
@@ -62,10 +60,9 @@ document.addEventListener("DOMContentLoaded" , function(){
              } else {
             alert('There are no elements to the left to remove.');
              }
-             if (id===0){
+            //  if (id===0){
                 
-             }
+            //  }
         }
      }
-    
 })
